@@ -1,0 +1,108 @@
+﻿<Window x:Class="PartnersMatcher.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PartnersMatcher.View"
+        mc:Ignorable="d"
+        Title="Partners Matcher"
+        Height="525"
+        Width="788">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="0.5*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="PartnersMatcher"
+                   Grid.Column="3"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="4"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontFamily="Berlin Sans FB Demi"
+                   FontSize="30"/>
+        <TextBlock Name="UserNameText"
+                   Grid.Row="1"
+                   Grid.Column="7"
+                   Grid.ColumnSpan="2"
+                   Text="{Binding CurrentUser.Name}"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top" />
+        <Button Content="Sign Up"
+                Grid.Column="1"
+                Grid.Row="2"
+                VerticalAlignment="Center"
+                Click="SignUp_Click" />
+        <Button Content="Log In"
+                Grid.Column="1"
+                Grid.Row="3"
+                VerticalAlignment="Center"
+                Click="Login_Click" />
+        <TextBlock Grid.Column="3"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Center">
+            <Bold>Choose a topic</Bold>
+        </TextBlock>
+        <ComboBox Name="TopicsComboBox"
+                  Grid.Row="3"
+                  Grid.Column="3"
+                  Grid.ColumnSpan="2"
+                  VerticalAlignment="Center"
+                  ItemsSource="{Binding Topics}"
+                  SelectedIndex="0" />
+        <TextBlock Grid.Column="6"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Center">
+            <Bold>Insert a location</Bold>
+        </TextBlock>
+        <TextBox Name="LocationText"
+                 Grid.Column="6"
+                 Grid.Row="3"
+                 Grid.ColumnSpan="2"
+                 VerticalAlignment="Center"
+                 KeyDown="Search_KeyDown" />
+        <Button Content="Search"
+                Grid.Column="8"
+                Grid.Row="3"
+                VerticalAlignment="Center"
+                Margin="5"
+                Click="Search_Click" />
+        <DataGrid Name="SearchResults"
+                  Grid.Column="1"
+                  Grid.Row="4"
+                  Grid.ColumnSpan="8"
+                  Grid.RowSpan="5"
+                  ItemsSource="{Binding SearchResults}"
+                  IsReadOnly="True"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  CanUserSortColumns="True"
+                  AutoGeneratingColumn="OnAutoGeneratingColumn">
+        </DataGrid>
+    </Grid>
+</Window>
