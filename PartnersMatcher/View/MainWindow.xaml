@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Partners Matcher"
         Height="525"
-        Width="788">
+        Width="788"
+        Background="AliceBlue">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*" />
@@ -40,7 +41,7 @@
                    TextAlignment="Center"
                    VerticalAlignment="Center"
                    FontFamily="Berlin Sans FB Demi"
-                   FontSize="30"/>
+                   FontSize="30" />
         <TextBlock Name="UserNameText"
                    Grid.Row="1"
                    Grid.Column="7"

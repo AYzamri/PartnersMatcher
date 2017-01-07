@@ -8,7 +8,8 @@
         Title="Sign Up"
         Height="500"
         Width="500"
-        KeyDown="Window_KeyDown">
+        KeyDown="Window_KeyDown"
+        Background="AliceBlue">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*" />

@@ -110,7 +110,7 @@ namespace PartnersMatcher.Model
                 message.From = new MailAddress("no-reply@PartnersMatcher.com", "PartnersMatcher");
                 message.To.Add(new MailAddress(CurrentUser.Email));
                 message.Body = string.Format("Hello, {0}!\nThank you for joining us and welcome to PartnersMatcher!\nLogin now to find your partner for anything!", CurrentUser.Name);
-                message.Subject = string.Format("Welcome to PartnersMatcher!");
+                message.Subject = string.Format("Hi {0}, welcome to PartnersMatcher!",CurrentUser.Name);
                 client.Send(message);
             }
         }
